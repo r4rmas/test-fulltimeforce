@@ -47,7 +47,6 @@ export default function App() {
       justifyContent={'center'}
     >
       <Grid
-      // ADD MAX. SIZE
         width={'100%'}
         maxWidth={'container.xl'}
         templateColumns={{
