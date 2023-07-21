@@ -14,6 +14,5 @@
 - `cd front/`
 - `npm i`
 - `npm run dev`
-- `cd ../`
 
 That's it!
