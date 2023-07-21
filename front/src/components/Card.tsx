@@ -24,9 +24,18 @@ export default function Card({ commit }: { commit: Commit }) {
   }
 
   return (
-    <ChakraCard width={'100%'} height={'100%'}>
-      <CardHeader fontWeight={'bold'}>{`> ${commit.message}`}</CardHeader>
-      <CardBody display={'grid'} gridTemplateColumns={'70px 1fr'}>
+    <ChakraCard 
+      width={'100%'} 
+      height={'100%'} 
+      boxShadow={'md'}
+    >
+      <CardHeader fontWeight={'bold'}>
+        {`> ${commit.message}`}
+      </CardHeader>
+      <CardBody 
+        display={'grid'} 
+        gridTemplateColumns={'70px 1fr'}
+      >
         <Text fontWeight={'bold'}>Author:</Text>
         <Text>{commit.author.name}</Text>
         <Text fontWeight={'bold'}>Email:</Text>

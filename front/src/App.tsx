@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import Api from "./Api"
 import Commit from "./types/Commit"
 import Card from "./components/Card"
+import Header from "./components/Header"
 
 export default function App() {
   const [commits, setCommits] = useState<Commit[] | null>(null)
@@ -42,26 +43,32 @@ export default function App() {
   }, [])
 
   return (
-    <Flex 
+    <Flex
       width={'100%'}
-      justifyContent={'center'}
+      direction={'column'}
     >
-      <Grid
+      <Header />
+      <Flex 
         width={'100%'}
-        maxWidth={'container.xl'}
-        templateColumns={{
-          md: 'repeat(2, 1fr)', 
-          lg: 'repeat(3, 1fr)'
-        }}
-        gap={'1rem'}
-        padding={'2rem'}
+        justifyContent={'center'}
       >
-        {commits?.map(commit => (
-          <GridItem>
-            <Card commit={commit} />
-          </GridItem>
-        ))}
-      </Grid>
+        <Grid
+          width={'100%'}
+          maxWidth={'container.xl'}
+          templateColumns={{
+            md: 'repeat(2, 1fr)', 
+            lg: 'repeat(3, 1fr)'
+          }}
+          gap={'1rem'}
+          padding={'2rem'}
+        >
+          {commits?.map(commit => (
+            <GridItem>
+              <Card commit={commit} />
+            </GridItem>
+          ))}
+        </Grid>
+      </Flex>
     </Flex>
   )
 }
